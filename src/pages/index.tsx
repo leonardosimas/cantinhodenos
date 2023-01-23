@@ -29,9 +29,19 @@ const Home: NextPage = () => {
         linearGradient: "45deg, $whiteColor -90%, $whiteColorVariant 100%",
         width: "1440px",
         height: "100vh",
+        "@smMax": {
+          width: "100%",
+        },
       }}
     >
-      <Col>
+      <Col
+        css={{
+          "@smMax": {
+            width: "100%",
+            height: "187.5px",
+          },
+        }}
+      >
         <Header />
         <Row
           css={{
@@ -39,7 +49,7 @@ const Home: NextPage = () => {
             // alignItems: "flex-end",
             // alignSelf: "flex-end",
             // justifyContent: "flex-end",
-            width: "100%",
+            // width: "100%",
             height: "415px",
             // backgroundImage:
             //   "radial-gradient(#fafafa 20%, transparent 20%), radial-gradient(#fafafa 20%, transparent 20%)",
@@ -48,7 +58,8 @@ const Home: NextPage = () => {
             // backgroundSize: "20px 20px",
             "@smMax": {
               width: "100%",
-            }
+              height: "187.5px",
+            },
           }}
         >
           <Col
@@ -60,9 +71,9 @@ const Home: NextPage = () => {
               width: "50%",
               height: "415px",
               "@smMax": {
-                width: "50%",
                 marginLeft: "0",
-              }
+                marginTop: "1rem",
+              },
             }}
           >
             <Text
@@ -73,6 +84,13 @@ const Home: NextPage = () => {
                 lineHeight: "56.25px",
                 display: "flex",
                 alignItems: "flex-start",
+                "@smMax": {
+                  width: "160px",
+                  maxWidth: "160px",
+                  fontSize: "18px",
+                  lineHeight: "31.2px",
+                  marginLeft: "1rem",
+                },
               }}
             >
               Cantinho de Nós
@@ -88,14 +106,24 @@ const Home: NextPage = () => {
                 lineHeight: "27px",
                 display: "flex",
                 alignItems: "flex-start",
+                "@smMax": {
+                  width: "160px",
+                  maxWidth: "160px",
+                  fontSize: "16px",
+                  lineHeight: "20.8px",
+                  marginLeft: "1rem",
+                  marginTop: "0",
+                },
               }}
             >
-              A arte transforma, motiva e liberta. 
+              A arte transforma, motiva e liberta.
             </Text>
 
             <Spacer y={1.75} />
 
             <Button
+              rounded
+              auto
               css={{
                 backgroundColor: "$yellowColor",
                 color: "$blackVariant",
@@ -106,6 +134,14 @@ const Home: NextPage = () => {
                 width: "176px",
                 height: "44px",
                 borderRadius: "44px",
+                "@smMax": {
+                  marginLeft: "1rem",
+                  maxWidth: "64px",
+                  width: "48px",
+                  height: "36px",
+                  fontSize: "12px",
+                  marginTop: "-1rem",
+                },
               }}
             >
               Fazer pedido&nbsp;
@@ -120,25 +156,35 @@ const Home: NextPage = () => {
               justifyContent: "flex-end",
               "@smMax": {
                 width: "50%",
-              }
+                height: "187.5px",
+              },
             }}
           >
             <Image
+              src="/images/carreteis_desktop.png"
               containerCss={{
                 margin: 0,
                 padding: 0,
-              }}
-              width="524px"
-              height="415px"
-              src="/images/carreteis.png"
-              alt="Linhas"
-              css={{
+                width: "524px",
+                height: "415px",
+                alt: "Linhas",
                 objectPosition: "right",
+                objectFit: "cover",
                 clipPath: "polygon(100% 0, 100% 100%, 0% 100%, 16% 0%)",
                 "@smMax": {
-                  width: "335px",
-                  height: "auto",
-                }
+                  width: "100%",
+                  height: "100%",
+                  // objectFit: "cover", //Essa propriedade salvou o dia.
+                  // backgroundSize: "cover",
+                },
+              }}
+              css={{
+                "@smMax": {
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover", //Essa propriedade salvou o dia.
+                  backgroundSize: "cover",
+                },
               }}
             />
           </Col>
@@ -159,13 +205,16 @@ const Home: NextPage = () => {
               marginLeft: "1rem",
               marginRight: "1rem",
               display: "flex",
-              justufyContent: "center"
-            }
+              justifyContent: "center",
+              fontSize: "24px",
+              lineHeight: "31.2px",
+              marginTop: "-8rem",
+            },
           }}
         >
           NOSSOS PRODUTOS
         </Text>
-        {/* <Spacer y={2.5} />
+        <Spacer y={2.5} />
         <Row
           justify="center"
           css={{
@@ -176,28 +225,39 @@ const Home: NextPage = () => {
             justifyContent: "flex-start",
             marginLeft: "7rem",
             marginRight: "7rem",
-            border: "2px solid gray",
             "@smMax": {
-              width: "335px",
-              marginLeft: "1rem",
-              marginRight: "1rem",
-            }
+              width: "100%",
+              marginLeft: "0",
+              marginRight: "0",
+              marginTop: "-1.5rem",
+            },
           }}
         >
           <Grid.Container
             gap={0}
             justify="space-between"
-            css={{ margin: 0, padding: 0, width: "100%"}}
+            css={{
+              margin: 0,
+              padding: 0,
+              width: "100%",
+              "@smMax": {
+                marginLeft: "1rem",
+                marginRight: "1rem",
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between"
+              },
+            }}
           >
-            <Grid css={{ marginBottom: "1rem"}}>
+            <Grid css={{ marginBottom: "1rem" }}>
               <HomeCard
                 src="/images/arco-iris/arcoiris2.jpg"
                 name="Arco Iris"
-                description="Enfeite para o seu quarto"
+                description="Enfeite"
                 price="49,99"
               />
             </Grid>
-            <Grid >
+            <Grid>
               <HomeCard
                 src="/images/bolsas/bolsa1.jpg"
                 name="Bolsa"
@@ -205,15 +265,15 @@ const Home: NextPage = () => {
                 price="69,99"
               />
             </Grid>
-            <Grid >
+            <Grid>
               <HomeCard
-                src="/images/arco-iris/arcoiris2.jpg"
-                name="Arco Iris"
-                description="Enfeite para o seu quarto"
-                price="49,99"
+                src="/images/velas/velas.jpg"
+                name="Velas"
+                description="Velas"
+                price="29,99"
               />
             </Grid>
-            <Grid >
+            <Grid>
               <HomeCard
                 src="/images/bolsas/bolsa1.jpg"
                 name="Bolsa"
@@ -222,7 +282,7 @@ const Home: NextPage = () => {
               />
             </Grid>
           </Grid.Container>
-        </Row> */}
+        </Row>
         <Footer />
       </Col>
     </Container>
