@@ -37,18 +37,18 @@ export function Header(props: any) {
       maxWidth={"fluid"}
       containerCss={{
         justifyContent: "space-evenly",
-        $$navbarBlurBackgroundColor: "#whiteColor",
-        $$navbarBackgroundColor: "#whiteColor",
+        $$navbarBlurBackgroundColor: "#FFFFFF",
+        $$navbarBackgroundColor: "#FFFFFF",
         width: "100%",
         height: "80px",
         boxSizing: "border-box",
         zIndex: 99999,
         "@smMax": {
-          $$navbarBlurBackgroundColor: "#whiteColor",
-          width: "100%",
-          height: "40px",
-          maxHeight: "1rem",
+          $$navbarBlurBackgroundColor: "#FFFFFF",
           margin: "0",
+          width: "100%",
+          height: "3rem",
+          maxHeight: "1rem",
           paddingBottom: "0",
           borderBottom: "$borderWeights$light solid $grayColor",
         },
@@ -81,9 +81,9 @@ export function Header(props: any) {
             height="80px"
             css={{
               "@smMax": {
-                width: "64px",
-                height: "18px",
-                marginTop: "1.4rem",
+                width: "120px",
+                height: "60px",
+                marginTop: "0.8rem",
               },
             }}
           />
@@ -93,25 +93,13 @@ export function Header(props: any) {
             css={{
               display: "flex",
               alignItems: "flex-end",
+              "@smMax": { marginLeft: "-6rem" },
             }}
           >
             <Navbar.Item>
-              <Text
-                css={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  fontFamily: "$poppins",
-                  fontSize: "16px",
-                  fontWeight: "$bold",
-                  margin: "1rem",
-                }}
-              >
-                Home
-              </Text>
-            </Navbar.Item>
-            <Navbar.Item>
-              <Text
+              <Button
+                light
+                auto
                 css={{
                   display: "flex",
                   justifyContent: "center",
@@ -119,32 +107,37 @@ export function Header(props: any) {
                   fontFamily: "$poppins",
                   fontSize: "16px",
                   fontWeight: "bold",
-                  margin: "1rem",
-                }}
-              >
-                Produtos
-              </Text>
-            </Navbar.Item>
-            <Navbar.Item>
-              <Text
-                css={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  fontFamily: "$poppins",
-                  fontSize: "16px",
-                  fontWeight: "bold",
-                  margin: "1rem",
+                  "@smMax" : {
+                    width: "60px"
+                  }
                 }}
               >
                 <Link
-                  href="https://web.whatsapp.com/send?phone=5521985035765"
-                  target="_blank"
-                  css={{color: "#2F1709"}}
+                  href="/"
+                  css={{ color: "#2F1709" }}
                 >
-                  Contato
+                  Home
                 </Link>
-              </Text>
+              </Button>
+            </Navbar.Item>
+            <Navbar.Item>
+              <Button
+                light
+                auto
+                css={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontFamily: "$poppins",
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  "@smMax" : {
+                    width: "60px"
+                  }
+                }}
+              >
+                Produtos
+              </Button>
             </Navbar.Item>
           </Row>
         </Navbar.Item>

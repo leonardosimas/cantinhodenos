@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <Col
       css={{
-        backgroundColor: "$greenColorBackground",
+        backgroundColor: "$whiteColor",
         width: "100%",
         display: "flex",
         flexDirection: "column",
@@ -16,9 +16,13 @@ export function Footer() {
         alignItems: "center",
         justifyContent: "center",
         "@smMax": {
+          display: "flex",
+          flexDirection: "column",
           flexWrap: "wrap",
-          height: "100%",
           justifyContent: "center",
+          width: "100%",
+          height: "100%",
+          marginTop: "1rem",
           zIndex: 0, //Para não aparecer os itens no fundo do collapse
         },
       }}
@@ -30,6 +34,11 @@ export function Footer() {
           fontSize: "20px",
           fontFamily: "$poppins",
           lineHeight: "30px",
+          "@smMax": {
+            fontSize: "16px",
+            lineHeight: "24px",
+            marginTop: "0rem",
+          },
         }}
       >
         {year} - Cantinho de Nós
@@ -42,6 +51,11 @@ export function Footer() {
           fontFamily: "$poppins",
           lineHeight: "30px",
           marginTop: "1rem",
+          "@smMax": {
+            fontSize: "16px",
+            lineHeight: "24px",
+            marginTop: "0.5rem",
+          },
         }}
       >
         Contato
@@ -54,6 +68,11 @@ export function Footer() {
           fontFamily: "$poppins",
           lineHeight: "30px",
           marginTop: "1rem",
+          "@smMax": {
+            fontSize: "16px",
+            lineHeight: "24px",
+            marginTop: "0.5rem",
+          },
         }}
       >
         <Link
@@ -72,6 +91,13 @@ export function Footer() {
           fontFamily: "$poppins",
           lineHeight: "30px",
           marginTop: "0.5rem",
+          "@smMax": {
+            fontSize: "16px",
+            lineHeight: "24px",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "0.5rem",
+          },
         }}
       >
         <a href="mailto:cantinhodenosmacrame@gmail.com?subject=link HTML">
@@ -84,6 +110,7 @@ export function Footer() {
           alignItems: "center",
           justifyContent: "center",
           marginTop: "1.625rem",
+          "@smMax": { marginTop: "0.5rem" },
         }}
       >
         <Button
@@ -100,6 +127,10 @@ export function Footer() {
             "@smMax": {
               margin: "1rem",
               marginTop: "0",
+              height: "40px",
+              width: "40px",
+              minWidth: "40px",
+              maxWidth: "40px",
             },
           }}
         >
@@ -119,6 +150,10 @@ export function Footer() {
             "@smMax": {
               margin: "1rem",
               marginTop: "0",
+              height: "40px",
+              width: "40px",
+              minWidth: "40px",
+              maxWidth: "40px",
             },
           }}
         >
@@ -142,11 +177,79 @@ export function Footer() {
             "@smMax": {
               margin: "1rem",
               marginTop: "0",
+              height: "40px",
+              width: "40px",
+              minWidth: "40px",
+              maxWidth: "40px",
             },
           }}
         >
           <Image src={"/images/Vector3.png"} width="48px" height="48px" />
         </Button>
+      </Row>
+      <Row
+        css={{
+          position: "absolute",
+          display: "flex",
+          alignItems: "flex-end",
+          width: "112px",
+          height: "92px",
+          right: "12rem",
+        }}
+      >
+        <Row
+          css={{
+            position: "absolute",
+            display: "flex",
+            alignItems: "flex-end",
+            left: "-5rem",
+            top: "1rem",
+            "@smMax": {
+              top: "-0.5rem",
+            },
+          }}
+        >
+          <Image
+            src={"/images/Group.png"}
+            width="60px"
+            height="48px"
+            css={{
+              position: "absolute",
+              "@smMax": {
+                width: "60px",
+                height: "48px",
+                position: "absolute",
+              },
+            }}
+          />
+        </Row>
+        <Row css={{
+            position: "absolute",
+            display: "flex",
+            alignItems: "flex-end",
+            left: "0rem",
+            top: "-1rem",
+            "@smMax": {
+              width: "55px",
+              height: "66px",
+              top: "1.5rem",
+              left: "13rem"
+            },
+          }}>
+          <Image
+            src={"/images/Group8.png"}
+            width="109px"
+            height="112px"
+            css={{
+              position: "absolute",
+              "@smMax": {
+                width: "55px",
+                height: "66px",
+                position: "absolute",
+              },
+            }}
+          />
+        </Row>
       </Row>
     </Col>
   );

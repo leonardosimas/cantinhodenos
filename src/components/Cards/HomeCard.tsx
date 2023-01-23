@@ -11,9 +11,8 @@ export default function HomeCard(props: any) {
 
     <Card 
       isHoverable
-
-    css={{ w: "384px", h: "499px", "@smMax": {w: "335px"} }}>
-    <Card.Header css={{ position: "absolute", zIndex: 1, top: 5}}>
+    css={{ w: "384px", h: "499px", "@smMax": {w: "168px" , h: "320px", display: "flex", flexWrap: "wrap"} }}>
+    <Card.Header css={{ position: "absolute", zIndex: 1, top: 5, "@smMax": {height: "80px"}}}>
       <Col>
         <Text h3 color="ffffffAA">
           {name}
@@ -25,8 +24,9 @@ export default function HomeCard(props: any) {
         src={src}
         width="100%"
         height="100%"
-        objectFit="cover"
+        objectFit="fill"
         alt="Card example background"
+        css={{display: "flex"}}
       />
     </Card.Body>
     <Card.Footer
@@ -34,10 +34,11 @@ export default function HomeCard(props: any) {
       css={{
         position: "absolute",
         height: "100px",
-        bgBlur: "#ffffff66",
+        bgBlur: "#ffffff33",
         borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
         bottom: 0,
         zIndex: 1,
+        "@smMax": {height: "80px"}
       }}
     >
       <Col css={{
@@ -51,7 +52,13 @@ export default function HomeCard(props: any) {
             css={{
               fontFamily: "$poppins",
               fontWeight: "$semibold",
-              lineHeight: "30px"
+              lineHeight: "30px",
+              "@smMax" : {
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                fontSize: "16px"
+              }
             }}
           >
             {description}
@@ -60,7 +67,13 @@ export default function HomeCard(props: any) {
           css={{
             fontFamily: "$poppins",
             fontWeight: "$semibold",
-            lineHeight: "36px"
+            lineHeight: "36px",
+            "@smMax" : {
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              fontSize: "16px"
+            }
           }}>
             R$ {price}
           </Text>
