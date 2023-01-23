@@ -1,3 +1,7 @@
-Cantinho de Nós.
+Cantinho de NÃ³s.
 
-Este é um projeto feito em Next Js, usando o Next UI e Phospor Icons.
+Este Ã© um projeto feito em Next Js, usando o Next UI e Phospor Icons.
+
+Landing Page em desenvolvimento.
+
+https://cantinhodenos-xa5c.vercel.app/
